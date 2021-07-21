@@ -5,7 +5,6 @@ import TrashImg from './delete.svg';
 
 let tasks = null;
 
-/**       AddTask adds tasks to the tasks list      */
 window.addTask = function addTask() {
   const str = document.getElementById('description').value;
   const firstLetter = str.charAt(0).toUpperCase();
