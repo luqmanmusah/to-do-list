@@ -114,10 +114,19 @@ li {
   opacity: 0.3;
 }
 
+.edit-btn {
+  cursor: all-scroll;
+}
+
 .refresh-btn {
   text-align: end;
 }
 
 .clear-btn {
   color: rgba(165, 165, 165, 0.76);
+}
+
+.dragging {
+  opacity: 0.2;
+  cursor: all-scroll;
 }
