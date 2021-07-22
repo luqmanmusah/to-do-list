@@ -1,5 +1,5 @@
 # To_do List
-List Structure
+Interactive List
 
 ![screenshoot](https://user-images.githubusercontent.com/22328716/125749303-644462c6-799e-410b-836a-8c913b8b88e6.png)
 
@@ -19,10 +19,12 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup
 
-- Clone the repo `https://github.com/luqmanmusah/to_do_list.git`
+- Clone the repo `https://github.com/luqmanmusah/to-do-list.git`
 - `cd` into the directory
-- checkout to the htmlstage branch `git checkout html_stage`
+- checkout to the interactive branch `git checkout interactive_list`
+- Run `npm start` 
 - open in your desired code editor
+- Use the enter button to add a task
 
 ## Author
 
@@ -47,4 +49,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt) licensed.
