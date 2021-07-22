@@ -1,46 +1,9 @@
 import './style.css';
 import RecycleImg from './recycle.svg';
 import MoreImg from './more.svg';
-import { drop, allowDrop, drag } from './sorting.js';
+import { drag, drop, allowDrop } from './sorting.js';
 import updateTasks from './status.js';
-
-window.addTask = function addTask(tasks) {
-  const str = document.getElementById('description').value;
-  const firstLetter = str.charAt(0).toUpperCase();
-  str.replace(str.charAt(0), firstLetter);
-  const description = str;
-  const completed = false;
-  const date = new Date();
-  const id = date.getMilliseconds();
-
-  if (!tasks) {
-    tasks = [];
-  }
-
-  const index = tasks.length + 1;
-
-  if (tasks && description !== '') {
-    const task = {
-      description,
-      completed,
-      index,
-      id,
-    };
-    tasks.push(task);
-    tasks.sort((taskA, taskB) => {
-      const indexA = taskA.position;
-      const indexB = taskB.position;
-      if (indexA < indexB) {
-        return -1;
-      }
-      if (indexA > indexB) {
-        return 1;
-      }
-      return 0;
-    });
-    window.update(tasks);
-  }
-};
+import { addTask, editTask, clear } from './add_remove.js';
 
 let tasks = null;
 
@@ -58,7 +21,7 @@ window.updateLocalStorage = function updateLocalStorage(retrieve) {
 
 /**       Handler for calling a task from and inline declared listener */
 window.callAddTask = function callAddTask() {
-  window.addTask(tasks);
+  addTask(tasks);
 };
 
 /**       Handler for calling a task from and inline declared listener */
@@ -107,6 +70,7 @@ window.displayTasks = function displayTasks() {
       div.id = divId;
       div.classList.add('drag-div');
       div.draggable = true;
+      div.addEventListener('click', () => editTask(divId, tasks));
       div.data = index;
       div.addEventListener('dragstart', (EventTarget) => {
         div.classList.add('dragging');
@@ -163,14 +127,15 @@ window.displayTasks = function displayTasks() {
             <img class="add-btn-img" src=${RecycleImg} alt="" /> 
             </button>
   </div>       
-          <form id="task-form">
+          <form onsubmit="window.callAddTask()" id="task-form">
             <input
               id="description"
               type="text"
               class="text"
               placeholder="Add to your list ..."
             />
-            <button id="add-btn" type="button" onclick="window.callAddTask()"> 
+            <button id="add-btn" type="submit" 
+            type="button"> 
           ${EnterImg}
             </button>
           </form>       
@@ -179,6 +144,9 @@ window.displayTasks = function displayTasks() {
   container.innerHTML = template;
   const buttonHtml = document.createElement('button');
   buttonHtml.id = 'clear-btn';
+  buttonHtml.addEventListener('click', () => {
+    clear(tasks);
+  });
   buttonHtml.textContent = 'Clear completed tasks.';
   container.insertAdjacentElement('beforeend', list);
   container.insertAdjacentElement('beforeend', buttonHtml);
