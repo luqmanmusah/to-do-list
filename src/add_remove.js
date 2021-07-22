@@ -71,12 +71,7 @@ function editTask(divId, tasks) {
 }
 
 function clear(tasks) {
-  const temp = [];
-  tasks.forEach((task) => {
-    if (task.completed !== true) {
-      temp.push(task);
-    }
-  });
+  const temp = tasks.filter((task) => task.completed !== true);
   window.update(temp);
 }
 
