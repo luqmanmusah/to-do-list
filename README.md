@@ -13,6 +13,10 @@ Interactive List
 - JavaScript
 - Node.js
 
+## Live version
+
+[live](https://luqmanmusah.github.io/to-do-list/)
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
