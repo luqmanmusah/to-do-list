@@ -19,11 +19,9 @@ window.sessionStorage = storageMock();
 /**    The code from index starts here       */
 let tasks = [
   {
-    id: 0, index: 0, description: "Do things", completed: true,
-  },
+    id: 0, index: 0, description: "Do things", completed: true },
   {
-    id: 1, index: 1, description: "Do more things", completed: false,
-  },
+    id: 1, index: 1, description: "Do more things", completed: false },
 ];
 
 /**       Saves and retrieves from local storage       */
@@ -61,7 +59,7 @@ window.displayTasks = function displayTasks() {
   const container = window.document.getElementById("container");
   const list = window.document.createElement("ul");
   list.id = "list";
-  // const EnterImg = "&#8629";
+  const EnterImg = "&#8629";
 
   if (tasks) {
     tasks.forEach((task, index) => {
@@ -166,27 +164,4 @@ window.displayTasks = function displayTasks() {
 window.updateLocalStorage(true);
 window.displayTasks();
 
-describe("Test task manager ->", () => {
-  test("add 1 li element to the ul", () => {
-    const input = window.document.getElementById("description");
-    input.value = "Do stuff";
-    const task = { id: 4, index: 4, description: "Do stuff", completed: true };
-
-    const listBefore = window.document.getElementsByTagName("li");
-    const lenB = listBefore.length;
-    addTask(tasks);
-    const listAfter = window.document.getElementsByTagName("li");
-    const lenA = listAfter.length;
-
-    expect(lenA).toBe(lenB + 1);
-  });
-  test("remove the li element from the ul", () => {
-    const listBefore = window.document.getElementsByTagName("li");
-    const lenB = listBefore.length;
-    removeTask("div2", tasks);
-    const listAfter = window.document.getElementsByTagName("li");
-    const lenA = listAfter.length;
-
-    expect(lenB - 1).toBe(lenA);
-  });
-});
+module.exports = { displayTasks, update, tasks };
