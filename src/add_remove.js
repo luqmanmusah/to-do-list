@@ -1,5 +1,5 @@
-import TrashImg from './delete.svg';
-import MoreImg from './more.svg';
+// import TrashImg from './delete.svg';
+// import MoreImg from './more.svg';
 
 function addTask(tasks) {
   const str = document.getElementById('description').value;
@@ -56,7 +56,7 @@ function editTask(divId, tasks) {
     if (li.id === divId) {
       li.style.backgroundColor = '#fff59c78';
       const img = li.getElementsByTagName('img')[0];
-      img.src = TrashImg;
+      // img.src = TrashImg;
       img.style.cursor = 'pointer';
       img.addEventListener('click', () => {
         removeTask(divId, tasks);
@@ -64,7 +64,7 @@ function editTask(divId, tasks) {
     } else {
       li.style.backgroundColor = 'white';
       const img = li.getElementsByTagName('img')[0];
-      img.src = MoreImg;
+      // img.src = MoreImg;
       img.style.cursor = 'all-scroll';
     }
   });
