@@ -5,11 +5,12 @@
   "description": "",
   "private": true,
   "jest": {
-    "verbose": true
+    "resetMocks": false,
+    "setupFiles": [
+      "./src/tests/tests_files/index.js"
+    ]
   },
-  "transform": {
-    "\\.js$": "<rootDir>/node_modules/babel-jest"
-  },
+
   "scripts": {
     "test": "jest --coverage",
     "testwatch": "jest --watchAll",

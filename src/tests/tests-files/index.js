@@ -4,9 +4,7 @@ import { addTask, removeTask } from "./add_remove";
 import { storageMock } from "./storageMock";
 
 const fs = require("fs");
-
-const jsdom = require("jsdom");
-
+var jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
 window.document.body.innerHTML = fs.readFileSync("src/index.html");
