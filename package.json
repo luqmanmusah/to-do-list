@@ -10,7 +10,6 @@
       "./src/tests/tests_files/index.js"
     ]
   },
-
   "scripts": {
     "test": "jest --coverage",
     "testwatch": "jest --watchAll",
@@ -27,6 +26,7 @@
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.14.5",
     "@babel/preset-react": "^7.14.5",
+    "@testing-library/jest-dom": "^5.14.1",
     "babel-eslint": "^10.1.0",
     "css-loader": "^5.2.6",
     "eslint": "^7.31.0",
@@ -36,6 +36,7 @@
     "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^5.3.2",
     "jest": "^27.0.6",
+    "jest-dom": "^4.0.0",
     "style-loader": "^3.1.0",
     "webpack": "^5.44.0",
     "webpack-cli": "^4.7.2",
