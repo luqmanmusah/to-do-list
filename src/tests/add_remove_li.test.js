@@ -11,7 +11,9 @@ describe("Test task manager ->", () => {
   test("add 1 li element to the ul", () => {
     const input = global.document.getElementById("description");
     input.value = "Do stuff";
-    const task = { id: 4, index: 4, description: "Do stuff", completed: true };
+    const task = {
+      id: 4, index: 4, description: "Do stuff", completed: true,
+    };
 
     const listBefore = global.document.getElementsByTagName("li");
     const lenB = listBefore.length;

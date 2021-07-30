@@ -7,7 +7,9 @@ import { allowDrop, drag, drop } from "../../sorting.js";
 import { storageMock } from "./storageMock.js";
 
 const fs = require("fs");
-var jsdom = require("jsdom");
+
+const jsdom = require("jsdom");
+
 const { JSDOM } = jsdom;
 
 window.document.body.innerHTML = fs.readFileSync("src/index.html");
@@ -59,7 +61,6 @@ window.displayTasks = function displayTasks() {
   const container = window.document.getElementById("container");
   const list = window.document.createElement("ul");
   list.id = "list";
-  // const EnterImg = "&#8629";
 
   if (tasks) {
     tasks.forEach((task, index) => {
