@@ -1,8 +1,8 @@
 /* eslint-disable quotes */
 import "./style.css";
-import RecycleImg from "./recycle";
-import MoreImg from "./more";
-import { drag, drop, allowDrop } from "./sorting";
+// import RecycleImg from './recycle.svg';
+// import MoreImg from './';
+import { drag, drop, allowDrop } from "./sorting.js";
 import updateTasks from "./status.js";
 import { addTask, editTask, clear } from "./add_remove.js";
 
@@ -20,7 +20,6 @@ function main() {
     }
     window.displayTasks();
   };
-
   /**       Handler for calling a task from and inline declared listener */
   window.callAddTask = function callAddTask() {
     addTask(tasks);
@@ -31,7 +30,6 @@ function main() {
     tasks = null;
     window.updateLocalStorage(false);
   };
-
   /**       Update the state of the tasks            */
   window.update = function update(data) {
     if (!data) {
@@ -48,8 +46,7 @@ function main() {
     const container = document.getElementById("container");
     const list = document.createElement("ul");
     list.id = "list";
-    const EnterImg = "&#8629";
-
+    // const EnterImg = "&#8629";
     if (tasks) {
       tasks.forEach((task, index) => {
         const { description, id } = task;
@@ -59,14 +56,11 @@ function main() {
           li.classList.remove("dragging");
           drop(EventTarget);
         });
-
         li.addEventListener("dragover", (EventTarget) => {
           allowDrop(EventTarget);
         });
-
         const div = document.createElement("div");
         const divId = `div${task.index}`;
-
         div.classList.add("task");
         div.id = divId;
         div.classList.add("drag-div");
@@ -77,7 +71,6 @@ function main() {
           div.classList.add("dragging");
           drag(EventTarget);
         });
-
         const inputCheckbox = document.createElement("input");
         inputCheckbox.addEventListener("click", () => {
           window.update();
@@ -86,7 +79,6 @@ function main() {
         inputCheckbox.name = task.id;
         inputCheckbox.id = `input-check-${id}`;
         inputCheckbox.checked = task.completed;
-
         const inputTask = document.createElement("input");
         inputTask.id = `li-description-${id}`;
         inputTask.type = "text";
@@ -97,17 +89,14 @@ function main() {
         inputTask.addEventListener("change", () => {
           window.update();
         });
-
         const button = document.createElement("button");
         button.classList.add("edit-btn");
         button.id = `edit-btn-${id}`;
         button.type = "button";
-
         const img = document.createElement("img");
-        img.src = MoreImg;
+        // img.src = MoreImg;
         img.alt = "image";
         img.classList.add("add-btn-img");
-
         button.appendChild(img);
         div.appendChild(inputCheckbox);
         div.appendChild(inputTask);
@@ -115,43 +104,39 @@ function main() {
         li.appendChild(div);
         list.appendChild(li);
       });
-      const template = `
-<div class="top">
-<h1 class="title">Today's To Do</h1>
-       <button id="refresh-btn" type="button" 
-        onclick="window.restart()"
-        type="button"> 
-        <img class="add-btn-img" src=${RecycleImg} alt="" /> 
-        </button>
-</div>       
-      <form onsubmit="window.callAddTask()" id="task-form">
-        <input
-          id="description"
-          type="text"
-          class="text"
-          placeholder="Add to your list ..."
-        />
-        <button id="add-btn" type="submit" 
-        type="button"> 
-      ${EnterImg}
-        </button>
-      </form>       
-      `;
-
-      container.innerHTML = template;
-      const buttonHtml = document.createElement("button");
-      buttonHtml.id = "clear-btn";
-      buttonHtml.addEventListener("click", () => {
-        clear(tasks);
-      });
-      buttonHtml.textContent = "Clear completed tasks.";
-      container.insertAdjacentElement("beforeend", list);
-      container.insertAdjacentElement("beforeend", buttonHtml);
     }
-
-    window.updateLocalStorage(true);
-    window.displayTasks();
+    const template = `
+  <div class="top">
+  <h1 class="title">Today's To Do</h1>
+           <button id="refresh-btn" type="button" 
+            onclick="window.restart()"
+            type="button"> 
+            <img class="add-btn-img" alt="" /> 
+            </button>
+  </div>       
+          <form onsubmit="window.callAddTask()" id="task-form">
+            <input
+              id="description"
+              type="text"
+              class="text"
+              placeholder="Add to your list ..."
+            />
+            <button id="add-btn" type="submit" 
+            type="button"> 
+            </button>
+          </form>       
+          `;
+    container.innerHTML = template;
+    const buttonHtml = document.createElement("button");
+    buttonHtml.id = "clear-btn";
+    buttonHtml.addEventListener("click", () => {
+      clear(tasks);
+    });
+    buttonHtml.textContent = "Clear completed tasks.";
+    container.insertAdjacentElement("beforeend", list);
+    container.insertAdjacentElement("beforeend", buttonHtml);
   };
+  window.updateLocalStorage(true);
+  window.displayTasks();
 }
-
 main();

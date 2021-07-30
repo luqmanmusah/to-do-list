@@ -1,5 +1,6 @@
+/* eslint-disable object-shorthand */
 function storageMock() {
-  let storage = {};
+  const storage = {};
 
   return {
     setItem: function (key, value) {

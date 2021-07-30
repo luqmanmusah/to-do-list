@@ -1,7 +1,7 @@
 /* eslint-disable quotes */
 import updateTasks from "./status";
 import { addTask, removeTask } from "./add_remove";
-import { storageMock } from "./storagemock";
+import { storageMock } from "./storageMock";
 
 const fs = require("fs");
 
