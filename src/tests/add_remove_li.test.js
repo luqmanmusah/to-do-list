@@ -1,3 +1,4 @@
+/* eslint-disable import/named */
 /**      A function for editing the task description.       */
 /* eslint-disable quotes */
 import { addTask, removeTask } from "./tests-files/add_remove.js";
@@ -11,9 +12,9 @@ describe("Test task manager ->", () => {
   test("add 1 li element to the ul", () => {
     const input = global.document.getElementById("description");
     input.value = "Do stuff";
-    const task = {
-      id: 4, index: 4, description: "Do stuff", completed: true,
-    };
+    // const task = {
+    //   id: 4, index: 4, description: "Do stuff", completed: true,
+    // };
 
     const listBefore = global.document.getElementsByTagName("li");
     const lenB = listBefore.length;

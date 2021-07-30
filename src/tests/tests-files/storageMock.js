@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 /* eslint-disable object-shorthand */
 function storageMock() {
   const storage = {};

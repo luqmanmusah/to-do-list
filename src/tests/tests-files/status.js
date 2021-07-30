@@ -23,4 +23,4 @@ function updateTasks() {
   return tempTasks;
 }
 
-export default updateTasks;
+module.exports = { updateTasks };

@@ -10,6 +10,7 @@ const fs = require("fs");
 
 const jsdom = require("jsdom");
 
+// eslint-disable-next-line no-unused-vars
 const { JSDOM } = jsdom;
 
 window.document.body.innerHTML = fs.readFileSync("src/index.html");
@@ -21,9 +22,11 @@ window.sessionStorage = storageMock();
 /**    The code from index starts here       */
 let tasks = [
   {
-    id: 0, index: 0, description: "Do things", completed: true },
+    id: 0, index: 0, description: "Do things", completed: true,
+  },
   {
-    id: 1, index: 1, description: "Do more things", completed: false },
+    id: 1, index: 1, description: "Do more things", completed: false,
+  },
 ];
 
 /**       Saves and retrieves from local storage       */
