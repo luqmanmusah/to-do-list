@@ -1,4 +1,5 @@
 /**      A function for editing the task description.       */
+/* eslint-disable quotes */
 import { addTask, removeTask } from "./tests-files/add_remove.js";
 import { displayTasks, tasks } from "./tests-files/index.js";
 

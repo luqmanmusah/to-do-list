@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable quotes */
 import { updateTasks } from "./status.js";
-import { addTask, removeTask } from "./add_remove.js";
+import { addTask } from "./add_remove.js";
 import { allowDrop, drag, drop } from "../../sorting.js";
 
 import { storageMock } from "./storageMock.js";
@@ -59,7 +59,7 @@ window.displayTasks = function displayTasks() {
   const container = window.document.getElementById("container");
   const list = window.document.createElement("ul");
   list.id = "list";
-  const EnterImg = "&#8629";
+  // const EnterImg = "&#8629";
 
   if (tasks) {
     tasks.forEach((task, index) => {
