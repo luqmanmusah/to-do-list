@@ -8,7 +8,7 @@
     "verbose": true
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "testwatch": "jest --watchAll",
     "watch": "webpack --watch",
     "start": "webpack serve --open",
