@@ -41,7 +41,12 @@
     "webpack-nano": "^1.1.1"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "@jest/globals": "^27.0.6",
+    "@testing-library/dom": "^8.1.0",
+    "babel-jest": "^27.0.6",
+    "jsdom": "^16.6.0",
+    "lodash": "^4.17.21",
+    "regenerator-runtime": "^0.13.9"
   },
   "main": "server.js"
 }
