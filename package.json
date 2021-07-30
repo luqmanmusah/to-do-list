@@ -5,8 +5,12 @@
   "description": "",
   "private": true,
   "jest": {
-    "verbose": true
+    "resetMocks": false,
+    "setupFiles": [
+      "./src/tests/tests_files/index.js"
+    ]
   },
+
   "scripts": {
     "test": "jest --coverage",
     "testwatch": "jest --watchAll",

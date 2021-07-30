@@ -7,10 +7,7 @@ import { allowDrop, drag, drop } from "../../sorting.js";
 import { storageMock } from "./storageMock.js";
 
 const fs = require("fs");
-
-const jsdom = require("jsdom");
-
-// eslint-disable-next-line no-unused-vars
+var jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
 window.document.body.innerHTML = fs.readFileSync("src/index.html");
