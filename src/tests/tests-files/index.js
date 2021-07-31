@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable quotes */
 import { updateTasks } from "./status.js";
-import { addTask } from "./add_remove.js";
+import { addTask, editTask, clear } from "./add_remove.js";
 import { allowDrop, drag, drop } from "../../sorting.js";
 
 import { storageMock } from "./storageMock.js";
