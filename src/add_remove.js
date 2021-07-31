@@ -1,5 +1,7 @@
-import TrashImg from './delete.svg';
-import MoreImg from './more.svg';
+// eslint-disable-next-line import/no-unresolved
+import TrashImg from './delete';
+// eslint-disable-next-line import/no-unresolved
+import MoreImg from './more';
 
 function addTask(tasks) {
   const str = document.getElementById('description').value;
